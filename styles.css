@@ -4,7 +4,7 @@
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, figure, p, ol, ul {
+h1, h2, h3, h4, h5, figure, p, ol, ul, body {
   margin: 0;
 }
 
@@ -21,4 +21,30 @@ h1, h2, h3, h4, h5 {
 img {
   display: block;
   max-inline-size: 100%;
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    min-height: 100vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #3a65aa;
+}
+
+.header {
+    grid-area: header;
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+.main {
+    grid-area: main;
+    background-color: #dadada;
 }
