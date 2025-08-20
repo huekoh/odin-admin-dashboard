@@ -1,31 +1,57 @@
 @import "modern-normalize";
 
+/* normalise browser default styling and set up custom properties */
 :root {
-  line-height: 1.5;
+    line-height: 1.5;
+
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    --main-color: #4386f1;
+    --second-color: #ece761;
+    --neutral-color: #dadada;
+
+    --section-padding: 1rem 2rem;
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul, body {
-  margin: 0;
+    margin: 0;
 }
 
 ol[role="list"], ul[role="list"] {
-  list-style: none;
-  padding-inline: 0;
+    list-style: none;
+    padding-inline: 0;
 }
 
-h1, h2, h3, h4, h5 {
-  font-size: inherit;
-  font-weight: inherit;
+h1, h2, h3, h4, h5, p {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 img {
-  display: block;
-  max-inline-size: 100%;
+    display: block;
+    max-inline-size: 100%;
 }
 
+/* set up custom classes */
+.h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+}
+
+/* main page layout */
 .page-layout {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 350px 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 
         "sidebar header"
@@ -33,18 +59,29 @@ img {
     min-height: 100vh;
 }
 
-.sidebar {
+.sidebar-section {
     grid-area: sidebar;
-    background-color: #3a65aa;
+    background-color: var(--main-color);
+    padding: var(--section-padding);
 }
 
-.header {
+.header-section {
     grid-area: header;
     background-color: white;
-    padding: 1rem 2rem;
+    padding: var(--section-padding);
 }
 
-.main {
+.main-section {
     grid-area: main;
-    background-color: #dadada;
+    background-color: var(--neutral-color);
 }
+
+/* styling for sidebar components */
+.sidebar-section > .sidebar-header > .h1 {
+    color: white;
+}
+
+/* styling for header components */
+
+
+/* styling for main section components */
