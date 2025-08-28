@@ -154,6 +154,7 @@ h3 {
 
 .header-grid > * > :last-child {
     display: flex;
+    align-items: center;
     gap: 1.5rem;
     margin-right: 2.5rem;
 }
