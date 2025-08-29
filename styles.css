@@ -21,8 +21,9 @@
     --icon-large: 48px;
 
     --main-color: #4386f1;
-    --second-color: #ece761;
+    --second-color: #d8b646;
     --neutral-color: #dee5e5;
+    --text-description-color: rgb(113, 113, 113);
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul, body {
@@ -46,7 +47,7 @@ img {
 }
 
 /* -------------------------------------------------------- */
-/* set up custom elements */
+/* set up custom elements and classes*/
 h1 {
     font-size: var(--text-2xl);
     font-weight: var(--font-bold);
@@ -62,6 +63,26 @@ h3 {
     font-weight: var(--font-bold);
 }
 
+h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+}
+
+
+
+.icon {
+    width: var(--icon-small);
+}
+
+.card {
+    min-width: 50px;
+    min-height: 100px;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: white;
+    box-shadow: 4px 10px 15px -4px rgba(0,0,0,0.3);
+    margin: 1rem 0rem;
+}
 
 /* -------------------------------------------------------- */
 /* main page layout */
@@ -92,7 +113,7 @@ h3 {
 
 .main-section {
     grid-area: main;
-    padding: 2rem 2rem 2rem 1.5rem;
+    padding: 2rem 4rem 2rem 2rem;
     background-color: var(--neutral-color);
 }
 
@@ -174,10 +195,6 @@ h3 {
     min-width: 600px;
 }
 
-.header-icon {
-    width: var(--icon-small);
-}
-
 .profile-icon-container {
     border-radius: 50%;
     border: none;
@@ -248,29 +265,57 @@ h3 {
 .dashboard-grid {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    column-gap: 1.5rem;
+    column-gap: 2rem;
     overflow-y: scroll;
 }
 
 .dashboard-grid .title {
     font-weight: var(--font-semibold);
+    max-height: fit-content;
 }
 
-.dashboard-card {
-    min-width: 50px;
-    min-height: 250px;
-    border: none;
-    border-radius: 16px;
-    background-color: white;
-    box-shadow: 4px 10px 15px -4px rgba(0,0,0,0.3);
-    margin: 1rem 0rem;
+.project-flex {
+    display: flex;
+    flex-direction: column;
 }
 
-.project-grid {
+.cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    column-gap: 1.5rem;
+    column-gap: 2rem;
+}
+
+.project.card {
+    border-left: 0.75rem solid var(--second-color);
+    padding: 1.5rem;
+    max-height: 200px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.project.card > h4 {
+    margin-top: 1rem;
+}
+
+.project.card > p {
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    color: var(--text-description-color);
+    overflow-y: auto; 
+    max-height: 120px; 
+    line-height: 1.5;
+}
+
+.project.card > .icons {
+    display: flex;
+    gap: 2rem;
+    margin-top: auto;
+}
+
+.project.card > .icons >:first-child {
+    margin-left: auto;
 }
 
 .sidebar-flex {
