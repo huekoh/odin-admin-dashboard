@@ -5,6 +5,7 @@
 :root {
     line-height: 1.5;
 
+    --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
     --text-lg: 1.25rem;
@@ -68,6 +69,11 @@ h4 {
     font-weight: var(--font-semibold);
 }
 
+h5 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+}
+
 
 
 .icon {
@@ -88,7 +94,7 @@ h4 {
 /* main page layout */
 .page-layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 
         "sidebar header"
@@ -264,7 +270,7 @@ h4 {
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     column-gap: 2rem;
     overflow-y: scroll;
 }
@@ -318,14 +324,29 @@ h4 {
     margin-left: auto;
 }
 
+.project-grid > .title {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
 .sidebar-flex {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.project-grid > .title {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
+.announcement.card {
+    padding: 2rem 1.75rem;
 }
 
+.announcement.card > p {
+    font-size: var(--text-xs);
+    color: var(--text-description-color);
+}
+
+.announcement.card > .divider {
+    margin: 1rem 0rem;
+    border: none;
+    height: 1.25px;
+    background-color: var(--neutral-color);
+}
